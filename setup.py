@@ -13,6 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://gitlab.com/jplusplus/sanitize-filename",
     packages=setuptools.find_packages(),
+    python_requires='~=3.7',
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
