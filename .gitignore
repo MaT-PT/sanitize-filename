@@ -1,0 +1,5 @@
+sanitize_filename.md
+*.egg-info/
+build/
+dist/
+__pycache__
