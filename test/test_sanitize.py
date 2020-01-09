@@ -23,3 +23,8 @@ def test_reserved_words():
 def test_long_names():
     """Make sure long names are truncated."""
     assert(len(sanitize("X" * 300)) == 255)
+
+
+def test_unicode_normalization():
+    """Names should be NFKD normalized."""
+    assert(sanitize("ў") == chr(1091)+chr(774))
