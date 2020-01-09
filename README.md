@@ -1,11 +1,11 @@
 A simple, dependency-free, blacklist-based filename sanitizer, for when you want to keep the original filename.
 
-Note that a blacklist based sanitizer will _never_ be as safe as a whitelist based one. In most cases, your best option is to create a safe filename yourself. You second best option is to use a whitelist approach (allowing only certain characters). This sanitizer is useful when you want to keep the original filename, including non ascii characters, whenever possible.
+Note that a blacklist based sanitizer will _never_ be as safe as a whitelist based one. In most cases, your best option is to create a safe filename yourself. Your second safest option is to use a whitelist approach (allowing only certain characters). This sanitizer is useful when you want to keep the original filename, including non ascii characters, whenever possible.
 
 ## Installation
 
 ```sh
-pip install sanitize-filename
+pip install sanitize_filename
 ```
 
 ## Usage

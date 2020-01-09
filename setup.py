@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="sanitize-filename",
+    name="sanitize_filename",
     version="1.0.0-dev1",
     author="Leo Wallentin | J++ Stockholm",
     author_email="mejl@leowallentin.se",
