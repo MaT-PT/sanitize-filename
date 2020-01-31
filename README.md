@@ -39,10 +39,10 @@ Examples:
 
 ## Changelog
 
-- 1.0.0-dev2
+- 1.0.0-dev3
 
   - Black list low code point characters (<32)
 
-- 1.0.0-dev2
+- 1.0.0-dev1
 
   - First version
