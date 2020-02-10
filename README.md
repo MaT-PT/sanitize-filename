@@ -39,6 +39,10 @@ Examples:
 
 ## Changelog
 
+- 1.1.0
+
+  - Try to preserve filename extensions if possible
+
 - 1.0.1
 
   - First release (as 1.0.1 due to a version number mix-up in 1.0.0)
