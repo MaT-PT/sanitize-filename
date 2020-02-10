@@ -1,5 +1,6 @@
 """A permissive filename sanitizer."""
 import unicodedata
+from os import path
 
 
 def sanitize(filename):
@@ -29,6 +30,12 @@ def sanitize(filename):
     if len(filename) == 0:
         filename = "__"
     if len(filename) > 255:
-        filename = filename[:255]
-        filename = filename.rstrip(". ")  # Re-check last character
+        (base, ext) = path.splitext(filename)
+        if len(ext) > 254:
+            ext = ext[254:]
+        maxl = 255 - len(ext)
+        filename = filename[:maxl]
+        filename = filename + ext
+        # Re-check last character (if there was no extension)
+        filename = filename.rstrip(". ")
     return filename
