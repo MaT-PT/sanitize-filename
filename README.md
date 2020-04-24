@@ -39,10 +39,10 @@ Examples:
 
 ## Changelog
 
-- next
+- 1.2.0
 
   - Get rid of os dependent checks; ensure uniform behaviour
-  - Make it work on long filenames where the non-extensions part consists of only dots
+  - Now works on long filenames where the non-extensions part consists of only dots
 
 - 1.1.0
 
