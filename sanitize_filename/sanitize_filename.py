@@ -1,6 +1,6 @@
 """A permissive filename sanitizer."""
 import unicodedata
-from os import path
+import re
 
 
 def sanitize(filename):
@@ -20,7 +20,7 @@ def sanitize(filename):
     filename = "".join(c for c in filename if c not in blacklist)
     # Remove all charcters below code point 32
     filename = "".join(c for c in filename if 31 < ord(c))
-    filename = unicodedata.normalize('NFKD', filename)
+    filename = unicodedata.normalize("NFKD", filename)
     filename = filename.rstrip(". ")  # Windows does not allow these at end
     filename = filename.strip()
     if all([x == "." for x in filename]):
@@ -30,7 +30,14 @@ def sanitize(filename):
     if len(filename) == 0:
         filename = "__"
     if len(filename) > 255:
-        (base, ext) = path.splitext(filename)
+        parts = re.split(r"/|\\", filename)[-1].split(".")
+        if len(parts) > 1:
+            ext = "." + parts.pop()
+            filename = filename[:-len(ext)]
+        else:
+            ext = ""
+        if filename == "":
+            filename = "__"
         if len(ext) > 254:
             ext = ext[254:]
         maxl = 255 - len(ext)
@@ -38,4 +45,6 @@ def sanitize(filename):
         filename = filename + ext
         # Re-check last character (if there was no extension)
         filename = filename.rstrip(". ")
+        if len(filename) == 0:
+            filename = "__"
     return filename

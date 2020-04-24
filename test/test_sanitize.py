@@ -26,6 +26,7 @@ def test_long_names():
     assert(len(sanitize("X" * 300)) == 255)
     assert(len(sanitize(".".join(["X" * 100, "X" * 100, "X" * 100]))) == 255)
     assert(len(sanitize(".".join(["X" * 300, "X" * 300, "X" * 300]))) == 255)
+    assert(len(sanitize("." * 300 + ".txt")) == 255)
 
 
 def test_unicode_normalization():

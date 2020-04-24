@@ -39,6 +39,11 @@ Examples:
 
 ## Changelog
 
+- next
+
+  - Get rid of os dependent checks; ensure uniform behaviour
+  - Make it work on long filenames where the non-extensions part consists of only dots
+
 - 1.1.0
 
   - Try to preserve filename extensions if possible
