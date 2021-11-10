@@ -6,6 +6,7 @@ def test_invalid_chars():
     """Make sure invalid characters are removed in filenames."""
     assert(sanitize("A/B/C") == "ABC")
     assert(sanitize("A*C.d") == "AC.d")
+    assert(sanitize("A?C.d") == "AC.d")
 
 
 def test_invalid_suffix():
