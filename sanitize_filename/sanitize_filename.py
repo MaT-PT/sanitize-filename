@@ -1,9 +1,9 @@
 """A permissive filename sanitizer."""
-import unicodedata
 import re
+import unicodedata
 
 
-def sanitize(filename):
+def sanitize(filename: str) -> str:
     """Return a fairly safe version of the filename.
 
     We don't limit ourselves to ascii, because we want to keep municipality
