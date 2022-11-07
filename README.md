@@ -41,6 +41,11 @@ Examples:
 
 ## Changelog
 
+- 1.2.1
+
+  - Add Python type hints
+  - Fix setup.py: use UTF-8 encoding when opening README.md
+
 - 1.2.0
 
   - Get rid of os dependent checks; ensure uniform behaviour

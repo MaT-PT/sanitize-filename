@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="sanitize_filename",
-    version="1.2.0",
+    version="1.2.1",
     author="Leo Wallentin | J++ Stockholm",
     author_email="mejl@leowallentin.se",
     description="A permissive filename sanitizer.",
