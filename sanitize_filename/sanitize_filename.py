@@ -3,7 +3,7 @@ import re
 import unicodedata
 
 
-def sanitize(filename: str) -> str:
+def sanitize(filename: str, replace_character: str = "") -> str:
     """Return a fairly safe version of the filename.
 
     We don't limit ourselves to ascii, because we want to keep municipality
@@ -17,9 +17,9 @@ def sanitize(filename: str) -> str:
         "COM6", "COM7", "COM8", "COM9", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5",
         "LPT6", "LPT7", "LPT8", "LPT9",
     ]  # Reserved words on Windows
-    filename = "".join(c for c in filename if c not in blacklist)
+    filename = "".join(c if c not in blacklist else replace_character for c in filename)
     # Remove all charcters below code point 32
-    filename = "".join(c for c in filename if 31 < ord(c))
+    filename = "".join(c if 31 < ord(c) else replace_character for c in filename)
     filename = unicodedata.normalize("NFKD", filename)
     filename = filename.rstrip(". ")  # Windows does not allow these at end
     filename = filename.strip()
