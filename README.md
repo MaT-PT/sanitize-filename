@@ -7,7 +7,11 @@ Note that a blacklist based sanitizer will _never_ be as safe as a whitelist bas
 ## Installation
 
 ```sh
-pip install sanitize_filename
+pip install -U git+https://github.com/MaT-PT/sanitize-filename.git#egg=sanitize_filename
+
+-or-
+
+pip install -U https://github.com/MaT-PT/sanitize-filename/tarball/master#egg=sanitize_filename
 ```
 
 ## Usage
@@ -40,6 +44,12 @@ Examples:
 ```
 
 ## Changelog
+
+- 1.2.2
+
+  - Add option to choose a replacement string for illegal characters
+  - Check reserved Windows file names in a case-insensitive manner
+  - Update pip command in README to use this GitHub repo
 
 - 1.2.1
 

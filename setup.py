@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="sanitize_filename",
-    version="1.2.1",
+    version="1.2.2",
     author="Leo Wallentin | J++ Stockholm",
     author_email="mejl@leowallentin.se",
     description="A permissive filename sanitizer.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/jplusplus/sanitize-filename",
+    url="https://github.com/MaT-PT/sanitize-filename",
     packages=setuptools.find_packages(),
     python_requires='~=3.7',
     package_data = {
