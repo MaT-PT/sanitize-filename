@@ -18,14 +18,14 @@ def sanitize(filename: str, replace_character: str = "") -> str:
         "LPT6", "LPT7", "LPT8", "LPT9",
     ]  # Reserved words on Windows
     filename = "".join(c if c not in blacklist else replace_character for c in filename)
-    # Remove all charcters below code point 32
+    # Remove all characters below code point 32
     filename = "".join(c if 31 < ord(c) else replace_character for c in filename)
     filename = unicodedata.normalize("NFKD", filename)
     filename = filename.rstrip(". ")  # Windows does not allow these at end
     filename = filename.strip()
     if all([x == "." for x in filename]):
         filename = "__" + filename
-    if filename in reserved:
+    if filename.upper() in reserved:
         filename = "__" + filename
     if len(filename) == 0:
         filename = "__"
