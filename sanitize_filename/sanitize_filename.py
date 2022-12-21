@@ -30,7 +30,7 @@ def sanitize(filename: str, replace_character: str = "") -> str:
     if len(filename) == 0:
         filename = "__"
     if len(filename) > 255:
-        parts = re.split(r"/|\\", filename)[-1].split(".")
+        parts = re.split(r"[/\\]", filename)[-1].split(".")
         if len(parts) > 1:
             ext = "." + parts.pop()
             filename = filename[:-len(ext)]
